@@ -1,6 +1,9 @@
 // =============================================================================
 // NeuroPy ICU Dashboard — API Client
 // =============================================================================
+// Toggle USE_MOCK_DATA to switch between mock and real backend.
+// When backend is ready, set to false and all calls go to real endpoints.
+// =============================================================================
 
 import type {
   VitalSigns,
@@ -13,6 +16,20 @@ import type {
   MAPStatistics,
 } from './types';
 
+import {
+  generateVitals,
+  generateInfusionState,
+  adjustInfusionTarget,
+  generateTrendData,
+  MOCK_PATIENT,
+  MOCK_CONTROLLER_CONFIG,
+  MOCK_ALERTS,
+  MOCK_MAP_STATS,
+} from './mockData';
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// FLIP THIS TO false WHEN BACKEND IS READY
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 const USE_MOCK_DATA = false;
 
 // Base URL for the real backend
