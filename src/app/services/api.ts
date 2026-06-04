@@ -33,7 +33,7 @@ import {
 const USE_MOCK_DATA = false;
 
 // Base URL for the real backend
-const API_BASE = 'https://gp-back-production-f096.up.railway.app/';
+const API_BASE = 'https://gp-back-production-f096.up.railway.app/api';
 
 // --- Helper ---
 async function fetchJson<T>(endpoint: string, options?: RequestInit): Promise<T> {
