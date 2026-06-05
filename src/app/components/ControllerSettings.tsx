@@ -1,4 +1,5 @@
 import { Settings, Target, Zap, Shield, Save } from 'lucide-react';
+import { toast } from 'sonner';
 import { useController } from '../hooks/useController';
 import type { ControlMode } from '../services/types';
 
@@ -7,6 +8,15 @@ export function ControllerSettings() {
 
   if (loading) return <div className="p-6 text-slate-500">Loading controller settings...</div>;
   if (error || !config) return <div className="p-6 text-red-500">Error: {error}</div>;
+
+  const handleSave = async () => {
+    try {
+      await saveConfig();
+      toast.success('Settings saved successfully');
+    } catch {
+      toast.error('Failed to save settings');
+    }
+  };
 
   return (
     <div className="space-y-6">
@@ -258,8 +268,8 @@ export function ControllerSettings() {
         >
           Reset to Defaults
         </button>
-        <button 
-          onClick={saveConfig}
+        <button
+          onClick={handleSave}
           disabled={saving}
           className={`px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-xl hover:from-indigo-600 hover:to-purple-600 transition-all shadow-lg shadow-indigo-500/30 flex items-center gap-2 cursor-pointer ${saving ? 'opacity-70 cursor-not-allowed' : ''}`}
         >

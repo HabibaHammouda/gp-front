@@ -1,4 +1,5 @@
 import { AlertTriangle, AlertCircle, CheckCircle, Info, Bell, BellOff } from 'lucide-react';
+import { toast } from 'sonner';
 import { useAlerts } from '../hooks/useAlerts';
 import type { AlertType } from '../services/types';
 
@@ -131,8 +132,11 @@ export function SafetyAlerts() {
                         <p className="text-sm text-slate-600 mt-1">{alert.message}</p>
                         <p className="text-xs text-slate-500 mt-2">{formatTime(alert.timestamp)}</p>
                       </div>
-                      <button 
-                        onClick={() => acknowledgeAlert(alert.id)}
+                      <button
+                        onClick={async () => {
+                          await acknowledgeAlert(alert.id);
+                          toast.success('Alert acknowledged');
+                        }}
                         className="px-3 py-1 bg-white border border-slate-300 rounded-lg text-sm hover:bg-slate-50 transition-colors cursor-pointer"
                       >
                         Acknowledge

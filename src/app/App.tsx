@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate, Link, useLocation } from 'react-router';
+import { Toaster } from 'sonner';
 import { Sidebar } from './components/Sidebar';
 import DashboardPage from './pages/DashboardPage';
 import MAPTrendsPage from './pages/MAPTrendsPage';
@@ -48,6 +49,7 @@ export default function App() {
     <BrowserRouter>
       <PatientProvider>
         <MainLayout />
+        <Toaster position="top-right" />
       </PatientProvider>
     </BrowserRouter>
   );

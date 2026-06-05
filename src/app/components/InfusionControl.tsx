@@ -1,4 +1,5 @@
 import { Syringe, TrendingUp, TrendingDown, Minus } from 'lucide-react';
+import { toast } from 'sonner';
 import { useInfusion } from '../hooks/useInfusion';
 
 export function InfusionControl() {
@@ -7,8 +8,9 @@ export function InfusionControl() {
   if (loading) return <div className="p-4 text-slate-500 h-full">Loading controller state...</div>;
   if (error || !infusion) return <div className="p-4 text-red-500 h-full">Error: {error}</div>;
 
-  const handleAdjust = (delta: number) => {
-    adjustRate(delta);
+  const handleAdjust = async (delta: number) => {
+    await adjustRate(delta);
+    toast.success('Infusion rate updated');
   };
 
   const getTrendIcon = () => {

@@ -48,6 +48,7 @@ export function useController() {
       setConfig(saved);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to save config');
+      throw err;
     } finally {
       setSaving(false);
     }
