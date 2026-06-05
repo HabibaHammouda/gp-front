@@ -11,6 +11,19 @@ export function MAPTrends() {
   if (loading) return <div className="p-6 text-slate-500">Loading trends...</div>;
   if (error || !stats) return <div className="p-6 text-red-500">Error: {error}</div>;
 
+  const exportCSV = () => {
+    const header = 'Time,MAP,Systolic,Diastolic';
+    const rows = trendData.map(d => `${d.time},${d.map},${d.systolic},${d.diastolic}`);
+    const csv = [header, ...rows].join('\n');
+    const blob = new Blob([csv], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `map-trends-${new Date().toISOString().slice(0, 10)}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
   return (
     <div className="space-y-6">
       {/* Header with controls */}
@@ -42,7 +55,7 @@ export function MAPTrends() {
                 </button>
               ))}
             </div>
-            <button className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-xl flex items-center gap-2 transition-colors cursor-pointer">
+            <button onClick={exportCSV} className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-xl flex items-center gap-2 transition-colors cursor-pointer">
               <Download size={16} />
               <span>Export</span>
             </button>
