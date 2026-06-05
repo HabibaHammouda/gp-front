@@ -100,9 +100,9 @@ export const MOCK_ALERTS: Alert[] = [
 
 // --- MAP Statistics (was hardcoded in MAPTrends.tsx) ---
 export const MOCK_MAP_STATS: MAPStatistics = {
-  averageMAP: 87,
-  timeInTarget: 94.3,
-  mapVariability: 4.2,
+  averageMAP: 84,
+  timeInTarget: 80.6,
+  mapVariability: 3.8,
   hypotensiveEvents: 2,
   lastHypotensiveEvent: '4h ago',
 };
@@ -116,9 +116,9 @@ let _map = 87;
 let _heartRate = 78;
 
 export function generateVitals(): VitalSigns {
-  _systolic = Math.max(100, Math.min(140, _systolic + (Math.random() - 0.5) * 4));
-  _diastolic = Math.max(60, Math.min(90, _diastolic + (Math.random() - 0.5) * 3));
-  _map = Math.max(70, Math.min(110, _map + (Math.random() - 0.5) * 2));
+  _systolic = Math.max(100, Math.min(130, _systolic + (Math.random() - 0.5) * 4));
+  _diastolic = Math.max(60, Math.min(85, _diastolic + (Math.random() - 0.5) * 3));
+  _map = Math.max(70, Math.min(95, _map + (Math.random() - 0.5) * 2));
   _heartRate = Math.max(65, Math.min(95, _heartRate + (Math.random() - 0.5) * 2));
 
   return {
@@ -164,7 +164,7 @@ export function generateTrendData(range: TrendRange): TrendDataPoint[] {
 
   return Array.from({ length: dataPoints }, (_, i) => {
     const time = new Date(now.getTime() - (dataPoints - i) * intervalMinutes * 60000);
-    const baseMAP = 85 + Math.sin(i / 10) * 8 + (Math.random() - 0.5) * 4;
+    const baseMAP = Math.max(60, Math.min(110, 85 + Math.sin(i / 10) * 3 + (Math.random() - 0.5) * 2));
 
     return {
       time: time.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }),
