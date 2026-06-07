@@ -28,9 +28,9 @@ export function MAPTrends() {
     <div className="space-y-6">
       {/* Header with controls */}
       <div className="bg-white rounded-2xl p-6 shadow-lg border border-slate-200">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-xl flex items-center justify-center">
+            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-xl flex items-center justify-center shrink-0">
               <Clock size={20} className="text-white" />
             </div>
             <div>
@@ -39,13 +39,13 @@ export function MAPTrends() {
             </div>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 flex-wrap">
             <div className="flex bg-slate-100 rounded-xl p-1">
               {(['1h', '6h', '12h', '24h'] as const).map((range) => (
                 <button
                   key={range}
                   onClick={() => setTimeRange(range)}
-                  className={`px-4 py-2 rounded-lg transition-all cursor-pointer ${
+                  className={`px-3 py-2 rounded-lg transition-all cursor-pointer text-sm ${
                     timeRange === range
                       ? 'bg-white text-blue-600 shadow-sm'
                       : 'text-slate-600 hover:text-slate-900'
@@ -169,7 +169,7 @@ export function MAPTrends() {
       </div>
 
       {/* Statistics Cards */}
-      <div className="grid grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
         <div className="bg-white rounded-2xl p-6 shadow-lg border border-slate-200">
           <p className="text-sm text-slate-500 mb-2">Average MAP</p>
           <p className="text-slate-900 text-3xl">{stats.averageMAP} mmHg</p>

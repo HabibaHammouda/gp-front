@@ -13,7 +13,7 @@ export function VitalCards() {
   }
 
   return (
-    <div className="grid grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
       {/* Blood Pressure Card */}
       <div className="bg-white rounded-2xl p-6 shadow-lg border border-slate-200">
         <div className="flex items-center gap-3 mb-4">

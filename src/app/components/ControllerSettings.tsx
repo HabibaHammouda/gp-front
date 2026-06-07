@@ -33,7 +33,7 @@ export function ControllerSettings() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Control Mode */}
         <div className="bg-white rounded-2xl p-6 shadow-lg border border-slate-200">
           <div className="flex items-center gap-2 mb-6">
@@ -139,7 +139,7 @@ export function ControllerSettings() {
           <h4 className="text-slate-900">Safety Limits</h4>
         </div>
 
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           <div>
             <label className="text-sm text-slate-600 mb-2 block">Maximum Infusion Rate</label>
             <div className="flex items-center gap-2">
@@ -191,7 +191,7 @@ export function ControllerSettings() {
       <div className="bg-white rounded-2xl p-6 shadow-lg border border-slate-200">
         <h4 className="text-slate-900 mb-6">Advanced Controller Parameters</h4>
 
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div className="space-y-4">
             <div className="flex items-center justify-between py-3 border-b border-slate-200">
               <span className="text-sm text-slate-600">PID Controller - Kp (Proportional)</span>
@@ -261,7 +261,7 @@ export function ControllerSettings() {
       </div>
 
       {/* Save Button */}
-      <div className="flex justify-end gap-3">
+      <div className="flex flex-wrap justify-end gap-3">
         <button 
           onClick={resetDefaults}
           className="px-6 py-3 border border-slate-300 text-slate-700 rounded-xl hover:bg-slate-50 transition-colors cursor-pointer"

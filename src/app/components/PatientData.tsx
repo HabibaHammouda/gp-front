@@ -19,7 +19,7 @@ export function PatientData() {
         </div>
       </div>
 
-      <div className="grid grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
         {/* Demographics */}
         <div className="space-y-4">
           <h4 className="text-slate-700">Demographics</h4>
@@ -104,7 +104,7 @@ export function PatientData() {
       {/* Lab Values */}
       <div className="mt-6 pt-6 border-t border-slate-200">
         <h4 className="text-slate-700 mb-4">Recent Lab Values</h4>
-        <div className="grid grid-cols-6 gap-4 text-sm">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4 text-sm">
           {patient.labValues.map((lab, index) => (
             <div key={index} className="px-3 py-2 bg-slate-50 rounded-lg">
               <p className="text-xs text-slate-500">{lab.name}</p>

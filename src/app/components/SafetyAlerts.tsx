@@ -47,9 +47,9 @@ export function SafetyAlerts() {
     <div className="space-y-6">
       {/* Header */}
       <div className="bg-white rounded-2xl p-6 shadow-lg border border-slate-200">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-red-500 to-orange-500 rounded-xl flex items-center justify-center">
+            <div className="w-10 h-10 bg-gradient-to-br from-red-500 to-orange-500 rounded-xl flex items-center justify-center shrink-0">
               <AlertTriangle size={20} className="text-white" />
             </div>
             <div>
@@ -68,7 +68,7 @@ export function SafetyAlerts() {
       </div>
 
       {/* Alert Statistics */}
-      <div className="grid grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
         <div className="bg-white rounded-2xl p-6 shadow-lg border border-red-200">
           <div className="flex items-center justify-between mb-2">
             <span className="text-sm text-slate-600">Critical Alerts</span>
@@ -185,7 +185,7 @@ export function SafetyAlerts() {
       <div className="bg-white rounded-2xl p-6 shadow-lg border border-slate-200">
         <h4 className="text-slate-900 mb-4">Active Safety Rules</h4>
         
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="p-4 bg-green-50 border border-green-200 rounded-xl">
             <div className="flex items-center gap-2 mb-2">
               <CheckCircle size={16} className="text-green-600" />

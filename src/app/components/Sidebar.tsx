@@ -14,7 +14,7 @@ export function Sidebar({ activePath }: SidebarProps) {
   ];
 
   return (
-    <div className="w-72 bg-gradient-to-b from-slate-900 to-slate-800 text-white p-6 flex flex-col shadow-2xl">
+    <div className="hidden md:flex md:w-72 bg-gradient-to-b from-slate-900 to-slate-800 text-white p-6 flex-col shadow-2xl">
       <div className="mb-8">
         <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-xl mb-4 flex items-center justify-center">
           <div className="w-6 h-6 border-2 border-white rounded-full"></div>

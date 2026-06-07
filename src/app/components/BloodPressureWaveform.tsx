@@ -113,14 +113,14 @@ export function BloodPressureWaveform() {
         </ResponsiveContainer>
       </div>
 
-      <div className="mt-4 flex items-center justify-between text-sm">
-        <div className="flex items-center gap-6">
+      <div className="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-sm">
+        <div className="flex flex-wrap items-center gap-4">
           <div className="flex items-center gap-2">
-            <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+            <div className="w-3 h-3 bg-red-500 rounded-full shrink-0"></div>
             <span className="text-slate-600">Systolic Threshold (120)</span>
           </div>
           <div className="flex items-center gap-2">
-            <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+            <div className="w-3 h-3 bg-green-500 rounded-full shrink-0"></div>
             <span className="text-slate-600">Diastolic Threshold (80)</span>
           </div>
         </div>
