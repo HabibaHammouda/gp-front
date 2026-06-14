@@ -61,7 +61,7 @@ export default function IntroPage() {
 
       {/* Footer */}
       <p className="absolute bottom-8 text-slate-600 text-sm">
-        Cairo University · Faculty of Engineering · Graduation Project 2025
+        Cairo University · Faculty of Engineering · Graduation Project 2026
       </p>
     </div>
   );

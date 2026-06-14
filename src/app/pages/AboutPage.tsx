@@ -125,7 +125,7 @@ export default function AboutPage() {
         </section>
 
         <div className="text-center mt-20 text-slate-600 text-sm">
-          Cairo University · Faculty of Engineering · Graduation Project 2025
+          Cairo University · Faculty of Engineering · Graduation Project 2026
         </div>
       </main>
     </div>
